@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الكوتشينج الدراسي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // هنا تضع كود الـ React الذي أعطيتك إياه سابقاً
+        // مع تغيير بسيط: استبدل الأيقونات بـ <i data-lucide="icon-name"></i>
+        // أو استخدم المكتبة مباشرة
+        const { useState } = React;
+
+        function App() {
+            return (
+                <div className="min-h-screen bg-gray-50 text-right">
+                    <nav className="bg-white shadow p-4 flex justify-between items-center">
+                        <h1 className="text-2xl font-bold text-indigo-600">كوتشينج أكاديمي</h1>
+                        <button className="bg-indigo-600 text-white px-4 py-2 rounded">دخول</button>
+                    </nav>
+                    <header className="py-20 bg-indigo-900 text-white text-center">
+                        <h2 className="text-4xl font-bold">مكتبة المصادر الرقمية</h2>
+                        <p className="mt-4">كل ما تحتاجه للتفوق الدراسي في مكان واحد</p>
+                    </header>
+                    {/* باقي الكود هنا... */}
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
