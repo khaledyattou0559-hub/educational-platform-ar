@@ -5,32 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مكتبة الكوتشينج الدراسي</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50">
     <div id="root"></div>
 
     <script type="text/babel">
-        // هنا تضع كود الـ React الذي أعطيتك إياه سابقاً
-        // مع تغيير بسيط: استبدل الأيقونات بـ <i data-lucide="icon-name"></i>
-        // أو استخدم المكتبة مباشرة
         const { useState } = React;
 
         function App() {
+            const [searchTerm, setSearchTerm] = useState('');
+            
+            const resources = [
+                { id: 1, title: "دليل تنظيم الوقت", desc: "استراتيجيات عملية لتقسيم اليوم الدراسي وزيادة الإنتاجية.", cat: "تنظيم", img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400" },
+                { id: 2, title: "تقنيات الحفظ السريع", desc: "تعلم أساليب الذاكرة التصويرية لتثبيت المعلومات.", cat: "مذاكرة", img: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400" },
+                { id: 3, title: "قلق الامتحانات", desc: "تمارين ذهنية للتعامل مع ضغوط فترة الاختبارات.", cat: "دعم نفسي", img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400" }
+            ];
+
+            const filtered = resources.filter(r => r.title.includes(searchTerm));
+
             return (
-                <div className="min-h-screen bg-gray-50 text-right">
-                    <nav className="bg-white shadow p-4 flex justify-between items-center">
-                        <h1 className="text-2xl font-bold text-indigo-600">كوتشينج أكاديمي</h1>
-                        <button className="bg-indigo-600 text-white px-4 py-2 rounded">دخول</button>
+                <div>
+                    {/* Navigation */}
+                    <nav className="bg-white shadow-sm p-4 sticky top-0 z-50">
+                        <div className="max-w-6xl mx-auto flex justify-between items-center">
+                            <div className="text-2xl font-bold text-indigo-600">كوتشينج أكاديمي</div>
+                            <button className="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition">دخول</button>
+                        </div>
                     </nav>
-                    <header className="py-20 bg-indigo-900 text-white text-center">
-                        <h2 className="text-4xl font-bold">مكتبة المصادر الرقمية</h2>
-                        <p className="mt-4">كل ما تحتاجه للتفوق الدراسي في مكان واحد</p>
+
+                    {/* Hero Section */}
+                    <header className="py-16 bg-indigo-900 text-white text-center px-4">
+                        <h2 className="text-4xl font-bold mb-4">مكتبة المصادر الرقمية</h2>
+                        <p className="text-indigo-100 max-w-xl mx-auto">كل ما تحتاجه لتطوير مهاراتك الدراسية والتفوق في مسارك الجامعي.</p>
                     </header>
-                    {/* باقي الكود هنا... */}
+
+                    {/* Search & Library */}
+                    <main className="max-w-6xl mx-auto px-4 py-12">
+                        <div className="mb-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                            <h3 className="text-2xl font-bold text-gray-800">المصادر المتاحة</h3>
+                            <input 
+                                type="text" 
+                                placeholder="ابحث عن مصدر..." 
+                                className="border p-3 rounded-xl w-full md:w-80 outline-none focus:ring-2 focus:ring-indigo-500"
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {filtered.map(item => (
+                                <div key={item.id} className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
+                                    <img src={item.img} className="w-full h-40 object-cover" />
+                                    <div className="p-6">
+                                        <span className="text-xs font-bold text-indigo-500 bg-indigo-50 px-2 py-1 rounded">{item.cat}</span>
+                                        <h4 className="text-xl font-bold mt-2 mb-3">{item.title}</h4>
+                                        <p className="text-gray-600 text-sm mb-6">{item.desc}</p>
+                                        <div className="flex gap-2">
+                                            <button className="flex-1 bg-indigo-600 text-white py-2 rounded-lg font-bold text-sm">تحميل</button>
+                                            <button className="flex-1 bg-gray-100 text-gray-700 py-2 rounded-lg font-bold text-sm">مشاهدة</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </main>
+
+                    {/* Footer */}
+                    <footer className="bg-white border-t py-8 text-center text-gray-500 text-sm">
+                        جميع الحقوق محفوظة &copy; 2026 كوتشينج أكاديمي
+                    </footer>
                 </div>
             );
         }
