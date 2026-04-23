@@ -1,14 +1,13 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خالد | كوتشينج دراسي متكامل</title>
+    <title>كوتشينج أكاديمي | خالد</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Tajawal', sans-serif; background-color: #f8fafc; }
+        body { font-family: 'Tajawal', sans-serif; background-color: #f8fafc; margin: 0; padding: 0; }
         .hero-gradient { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
         .card-hover { transition: transform 0.3s ease; }
         .card-hover:hover { transform: translateY(-5px); }
@@ -17,67 +16,83 @@
 </head>
 <body class="text-gray-800">
 
+    <!-- Header / Hero Section -->
     <header class="hero-gradient text-white py-14 px-6 text-center rounded-b-[50px] shadow-lg">
         <div class="max-w-2xl mx-auto">
             <div class="w-28 h-28 rounded-full mx-auto mb-4 overflow-hidden profile-img bg-white">
-                <img src="1775406772420.png" alt="الكوتش خالد" class="w-full h-full object-cover">
+                <img src="1000076254.png" alt="الكوتش خالد" class="w-full h-full object-cover">
             </div>
-            <h1 class="text-3xl font-bold mb-2 text-white">الكوتش خالد</h1>
+            <h1 class="text-3xl font-bold mb-2">الكوتش خالد</h1>
             <p class="text-indigo-100 opacity-90 text-sm font-medium">طالب علم نفس | مدرب مدرسي متخصص</p>
         </div>
     </header>
 
-    <main class="max-w-md mx-auto px-6 -mt-10">
+    <main class="max-w-md mx-auto px-6 -mt-10 mb-12">
         
+        <!-- قسم طلب الاستشارة (الهدف المالي الرئيسي) -->
         <div class="bg-white rounded-3xl p-6 shadow-xl mb-8 border border-indigo-50">
             <h2 class="text-xl font-bold text-center mb-2 text-indigo-900">حجز استشارة خاصة</h2>
-            <p class="text-gray-500 text-xs text-center mb-6 px-4">جلسات كوتشينج فردية لتطوير المهارات الدراسية والنفسية وفق أسس علمية.</p>
+            <p class="text-gray-500 text-[11px] text-center mb-6 px-4 leading-relaxed">جلسات كوتشينج فردية لتطوير المهارات الدراسية والنفسية وفق أسس علمية.</p>
             <a href="https://t.me/your_username" class="block w-full bg-indigo-600 text-white text-center py-4 rounded-2xl font-bold hover:bg-indigo-700 shadow-md transition-all">
                 📥 احجز جلستك الآن
             </a>
         </div>
 
-        <h3 class="font-bold text-gray-400 mb-4 px-2 text-[11px] uppercase tracking-wider">انضم لقنواتنا التعليمية:</h3>
+        <!-- الأقسام المتخصصة -->
+        <h3 class="font-bold text-gray-400 mb-4 px-2 text-[11px] uppercase tracking-wider italic">اختر المسار التعليمي:</h3>
         
         <div class="space-y-4">
+            <!-- قسم الابتدائي (الأولياء) -->
             <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm card-hover border border-gray-100">
-                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">🎒</div>
+                <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-2xl">🧸</div>
                 <div class="flex-1">
                     <h4 class="font-bold text-gray-800 text-sm">مرحلة الابتدائي</h4>
-                    <p class="text-[10px] text-gray-400">توجيه للأولياء وبناء الأساس</p>
+                    <p class="text-[10px] text-gray-400">توجيه للأولياء + قصص أطفال هادفة</p>
                 </div>
-                <a href="https://t.me/primary_link" class="bg-gray-50 text-indigo-600 px-4 py-2 rounded-xl font-bold text-xs border border-gray-100">دخول</a>
+                <a href="#" class="bg-indigo-50 text-indigo-600 px-4 py-2 rounded-xl font-bold text-xs">دخول</a>
             </div>
 
+            <!-- قسم المتوسط (الأولياء والطلاب) -->
             <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm card-hover border border-gray-100">
-                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">📚</div>
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl">📚</div>
                 <div class="flex-1">
                     <h4 class="font-bold text-gray-800 text-sm">مرحلة المتوسط</h4>
                     <p class="text-[10px] text-gray-400">مهارات التنظيم والمذاكرة الفعالة</p>
                 </div>
-                <a href="https://t.me/middle_link" class="bg-gray-50 text-indigo-600 px-4 py-2 rounded-xl font-bold text-xs border border-gray-100">دخول</a>
+                <a href="#" class="bg-indigo-50 text-indigo-600 px-4 py-2 rounded-xl font-bold text-xs">دخول</a>
             </div>
 
+            <!-- قسم البكالوريا (الطالب) -->
             <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm card-hover border border-gray-100">
-                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">⚖️</div>
+                <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-2xl">🎓</div>
                 <div class="flex-1">
-                    <h4 class="font-bold text-gray-800 text-sm">مرحلة الثانوي</h4>
-                    <p class="text-[10px] text-gray-400">التحضير النفسي للبكالوريا</p>
+                    <h4 class="font-bold text-gray-800 text-sm">مرحلة الثانوي (BAC)</h4>
+                    <p class="text-[10px] text-gray-400">التحضير النفسي والخرائط الذهنية</p>
                 </div>
-                <a href="https://t.me/high_link" class="bg-gray-50 text-indigo-600 px-4 py-2 rounded-xl font-bold text-xs border border-gray-100">دخول</a>
+                <a href="#" class="bg-indigo-50 text-indigo-600 px-4 py-2 rounded-xl font-bold text-xs">دخول</a>
             </div>
         </div>
 
-        <footer class="mt-16 mb-10 text-center">
+        <!-- ركن المطالعة الرقمية (بناء الثقة) -->
+        <div class="mt-10 bg-indigo-50 rounded-3xl p-6 flex items-center justify-between border border-indigo-100">
+            <div class="flex-1 pr-2">
+                <h4 class="font-bold text-indigo-900 text-sm">ركن المطالعة الرقمية</h4>
+                <p class="text-[10px] text-indigo-600 mt-1">قصص تفاعلية لتعزيز مهارات الطفل وزرع حب القراءة.</p>
+                <button class="mt-3 text-xs font-bold text-indigo-700 bg-white px-4 py-2 rounded-lg shadow-sm">تصفح القصص</button>
+            </div>
+            <div class="text-4xl pr-2 opacity-80">📖</div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center">
             <p class="text-gray-400 text-[10px] leading-loose">
-                جميع الحقوق محفوظة © 2026<br>
-                كوتشينج أكاديمي | خالد
+                منصة كوتشينج أكاديمي | خالد<br>
+                جميع الحقوق محفوظة © 2026
             </p>
         </footer>
 
     </main>
 </body>
 </html>
-
 
 ```
